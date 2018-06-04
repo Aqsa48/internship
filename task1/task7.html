@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Create Dynamic table row</title>
+<style type="text/css">
+    form{
+        margin: 10px 0;
+    }
+    form input, button{
+        padding: 5px;
+    }
+    table{
+        width: 100%;
+        margin-bottom: 20px;
+		border-collapse: collapse;
+	
+    }
+    table, th, td{
+        border: 1px solid #cdcdcd;
+    }
+    table th, table td{
+       
+        text-align: left;
+    }
+	.button_background
+	{
+	background-color:#795548;
+	color:#ffffff;
+	}
+</style>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        console.log('kk');
+	   //add row
+        $(".add_row_record").click(function(){
+            var name = $("#name").val();
+            var email = $("#lname").val();
+            var mobile = $("#batch").val();
+            var dept = $("#dept").val();
+            var markup = "<tr><td>" + name + "</td><td>" + email + "</td><td>" + mobile + "</td><td>" + dept + "</td></tr>";
+            $("table tbody").append(markup);
+        });
+        
+        
+      
+    }   );
+</script>
+</head>
+<body>
+    <form>
+        <input type="text" id="name" placeholder="Name">
+        <input type="text" id="lname" placeholder="lastname">
+        <input type="text" id="batch" placeholder="batch">
+        <input type="text" id="dept" placeholder="dept">
+        <input type="button" class="add_row_record button_background" value="Add Row">
+      
+    </form>
+    <table>
+        <thead>
+            <tr>
+                
+                <th>Name</th>
+                <th>lastname</th>
+                <th>batch</th>
+                <th>department</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</body> 
+</html>                            

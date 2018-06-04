@@ -1,0 +1,33 @@
+<html>
+<head><title>Create Table Dynamically</title>
+
+<script type="text/javascript">
+
+function generate()
+{
+
+    //declaring variable with create method
+    var t=document.createElement('table');
+    var row=document.createElement('tr');
+    var col=document.createElement('td');
+
+    //Append Child/Data, SetAttribute
+    col.innerHTML="Hello";
+    row.appendChild(col);
+    t.appendChild(row);
+    t.setAttribute("border","1");
+
+    //Fetch element where table is created & append
+    var id=document.getElementById("tbl");
+    tbl.appendChild(t);
+
+}
+
+</script>
+</head>
+<body>
+<input type="button" name="btngen" value="Generate" onClick="generate()"/>
+<!--element div where table will be appended-->
+<div id="tbl"></div>
+</body>
+</html>
